@@ -1,8 +1,8 @@
 const { Kafka } = require('kafkajs');
 const msg = process.argv[2];
 
-// const brokerUrl = "localhost:9092";
-const brokerUrl = "ugems.id:3021";
+const brokerUrl = "localhost:9092";
+// const brokerUrl = "ugems.id:3021";
 
 
 // KAFKA_CLIENT_ID=dev-dac-service-consumer
@@ -72,7 +72,7 @@ async function sendMessage() {
 
     // Sending the message to the topic
     await producer.send({
-      topic: 'dt-last-location',
+      topic: 'notification',
       messages: [
         { value: JSON.stringify(data) } // Serialize the data to a string
       ]
